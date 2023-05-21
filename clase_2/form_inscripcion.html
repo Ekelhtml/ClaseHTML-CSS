@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h2>Formulario de Inscripción</h2>
-  <form action="procesar_formulario.php" method="POST">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required><br><br>
+    <form action="procesar_formulario.php" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required /><br /><br />
 
-    <label for="apellido">Apellido:</label>
-    <input type="text" id="apellido" name="apellido" required><br><br>
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" required /><br /><br />
 
-    <label for="pais">País:</label>
-    <input type="text" id="pais" name="pais" required><br><br>
+      <label for="pais">País:</label>
+      <input type="text" id="pais" name="pais" required /><br /><br />
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br /><br />
 
-    <label for="trabaja">¿Trabaja?</label>
-        <input type="radio" name="trabaja" value="Si" checked /> Si
-        <input type="radio" name="trabaja" value="No" /> No
-    <br><br>
-    
-    <label for="carrera">Carreras:</label>
+      <label for="trabaja">¿Trabaja?</label>
+      <input type="radio" name="trabaja" value="Si" checked /> Si
+      <input type="radio" name="trabaja" value="No" /> No <br /><br />
 
-    <select required name="selecciona">
+      <label for="carrera">Carreras:</label>
+      <select required name="selecciona">
         <option value="">selecciona una opción</option>
-          <option value="1" >FullStack</option>
-          <option value="2" >FrontEnd</option>
-          <option value="3" >BacktEnd</option>
-        
-        
+        <option value="1">FullStack</option>
+        <option value="2">FrontEnd</option>
+        <option value="3">BacktEnd</option>
       </select>
-      <br><br><br>
-    
-    <label for="dudas">Tus dudas:</label><br>
-    
-    <textarea placeholder="Tus dudas aquí:" cols="30" rows="20" name="nombre" ">
-
-    </textarea>
-    <br><br>
-
-    <button type="reset">Limpiar</button>
-    <input type="submit" value="Enviar">
-  </form>
-</body>
+      <br /><br /><br />
+      <label for="dudas">Te leemos:</label><br />
+      <textarea
+        placeholder="Dejanos tus dudas"
+        cols="30"
+        rows="20"
+        name="nombre"
+      ></textarea
+      >
+      <br /><br />
+      <button type="reset">Limpiar</button>
+      <input type="submit" value="Enviar" />
+    </form>
+  </body>
 </html>
