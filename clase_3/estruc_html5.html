@@ -1,85 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <title>Estructura HTML5</title>
 </head>
+
 <body>
-    <div>
-        <img src="../image/logo_nasa.png" alt="logo logo_nasa">
-    </div>
-    <div>
-        <h2>Lista de Planetas Sistema Solar</h2>
-            <ol>
-        <li>
-            Mercurio
-        </li>
-        <li>
-            Venus
-        </li>
-        <li><em><b>Tierra</b></em>
-    
-        </li>
-        <li>
-            Marte
-        </li>
-        <li>
-            Júpiter
-        </li>
-        <li>
-            Saturno
-        </li>
-        <li>
-            Urano
-        </li>
-        <li>
-            Neptuno
-        </li>
-    </ol>
-    </div>
+    <header>
+        <img src="../image/logo_nasa.png" alt="logo logo_nasa" />
+    </header>
 
-    <div>
-        <h2>Lista de Planetas fuera del Sistema Solar</h2>
+    <aside>
+        <nav class="menuH">
             <ul>
-        <li>
-            51 Pegasi b
-        </li>
-        <li>
-            HD 209458 b
-        </li>
-        <li><em><b>Kepler-10b</b></em>
-    
-        </li>
-        <li>
-            Kepler-22b
-        </li>
-        <li>
-            Kepler-186f
-        </li>
-        <li>
-            Kepler-452b
-        </li>
-        <li>
-            Proxima Centauri b
-        </li>
-        <li>
-            TRAPPIST-1e
-        </li>
-    </ul>
-    </div>
+                <li><a href="#">Mercurio</a></li>
+                <li><a href="#">Venus</a></li>
+                <li><a href="#">Tierra</a></li>
+                <li><a href="#">Marte</a></li>
+                <li><a href="#">Júpiter</a></li>
+                <li><a href="#">Saturno</a></li>
+                <li><a href="#">Urano</a></li>
+                <li><a href="#">Neptuno</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-    <div><p>La primera lista solo incluye los planetas de nuestro sistema solar.</p> <p>la segunda muestra una lista fuera de nuestro sistema solar, que
-       <b> <em>se han descubierto, estos se denominan exoplanetasy pertenecen a otros sistemas estelares</em> </b>, pero no hay una
-        lista definitiva o completamente ordenada de todos los planetas en el universo, ya que aún
-        estamos descubriendo y explorando nuevos objetos celestes.</p> </div>
 
-    <div><img title="Kepler-62e" src="../image/kepler-62e.jpg" alt="exoplaneta descubierto llamado kepler-62e">
-    <p>Exoplaneta llamado Kepler-62e</p>
-    <p>Kepler-62e, también conocido por su denominación Kepler Object of Interest KOI-701.03,<strong>es uno de los 5 exoplanetas que orbitan alrededor de la estrella Kepler-62.</strong>  Fue descubierto el 18 de abril de 2013, sus principales descubridores fueron: Geoffrey Marcy, Natalie Batalha y Lisa Kaltenegger.</p>
 
-    </div>
+    <nav class="menuV">
+        <ul>
+            <li><a href="#">Menu 1</a></li>
+            <li><a href="#">Menu 2</a></li>
+            <li><a href="#">Menu 3</a></li>
+            <li><a href="#">Menu 4</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1 class="title">Planetas del Sistema Solar</h1>
+        <p>
+            La primera lista solo incluye los planetas de nuestro sistema solar. la
+            segunda muestra una lista fuera de nuestro sistema solar, que
+            <b>
+                <em>se han descubierto, estos se denominan exoplanetasy pertenecen a
+                    otros sistemas estelares</em> </b>, pero no hay una lista definitiva o completamente ordenada de
+            todos
+            los planetas en el universo, ya que aún estamos descubriendo y
+            explorando nuevos objetos celestes.
+        </p>
+    </main>
 
+    <footer>
+        <img title="Kepler-62e" src="../image/kepler-62e.jpg" alt="exoplaneta descubierto llamado kepler-62e" />
+        <p>Todos los derechos reservados</p>
+        <p>© EkelLeal 2023</p>
+    </footer>
 </body>
+
 </html>
