@@ -1,0 +1,43 @@
+.padre {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.div-izquierdo {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #899200;
+    width: 25%;
+
+}
+
+.container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 75%;
+    text-align: center;
+   
+
+
+}
+
+.container-2 .div-derecho {
+    width: 100%;
+    height: 50vh;
+    background-color: #a9b01d;
+    line-height: 50vh;
+  
+}
+
+
+.container-2 .div-inferior {
+    width: 100%;
+    height: 50vh;
+    background-color: #cbcf32;
+    line-height: 50vh;
+  
+}

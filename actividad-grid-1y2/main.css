@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+/*ACTIVIDAD 1 ----------------------------------------------*/
+
+body .act-1 {
+    text-align: center;
+    padding: 15px;
+    color: #56e5c5;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'header header header  main'
+        'header header header  menu';
+    grid-template-columns: 25%;
+    grid-template-rows: 250px 250px;
+    margin: 10px;
+
+}
+
+.grid-container .item {
+
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    border: 1px solid #cacaca;
+}
+
+.item-header {
+    grid-area: header;
+    background-color: #56e5c5;
+}
+
+.item-menu {
+    grid-area: menu;
+    background-color: #fff;
+}
+
+.item-main {
+    grid-area: main;
+    background-color: #fff;
+}
+
+/* FIN ACTIVIDAD 1 ------------------------------------- ------*/
+
+/* ACTIVIDAD 2 ------------------------------------------------*/
+
+body .act-2 {
+    text-align: center;
+    padding: 15px;
+    color: #c77a42;
+    font-size: 30px;
+}
+
+.grid-container-2 {
+    margin: 10px;
+    border-radius: 5px;
+    border: 2px solid #c77a42;
+    display: grid;
+    grid-template-areas: 
+    'one one one one one one'
+    'two two three three four four'
+    'two two five five . .'
+    ;
+}
+
+.grid-container-2 .item {
+    color: #db583c;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    background-color: #fef4e6;
+    border-radius: 5px;
+    border: 2px solid #fca848
+    ;
+}
+
+.item-one {
+    grid-area: one;
+    background-color: #ffd9ab;
+    display: grid;
+    grid-template-areas: 
+    'one-a one-a one-a one-a'
+    'one-b one-b one-b one-b'
+    'one-c one-c one-c one-c'
+    ;
+}
+.item-two {
+    grid-area: two;
+    background-color: #ffd9ab;
+}
+.item-three {
+    grid-area: three;
+    background-color: #ffd9ab;
+}
+.item-four {
+    grid-area: four;
+    background-color: #ffd9ab;
+}
+.item-five {
+    grid-area: five;
+    background-color: #ffd9ab;
+}
+
+.item-one .one-a {
+    grid-area: one-a;
+    background-color: #fbdcac;
+    text-align: left;
+    padding: 10px;
+    margin: 5px;
+}
+.item-one .one-b {
+    grid-area: one-b;
+    background-color: #fbdcac;
+    text-align: left;
+    padding: 10px;
+    margin: 5px;
+}
+.item-one .one-c {
+    grid-area: one-c;
+    background-color: #fbdcac;
+    text-align: left;
+    padding: 10px;
+    margin: 5px;
+}
+/* FIN ACTIVIDAD 2 --------------------------------------------*/
