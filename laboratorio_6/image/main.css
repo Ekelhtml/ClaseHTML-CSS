@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Abel', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 10px;
+   
+}
+
+.contianer {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: aquamarine;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+}
+
+.footer {
+    background-color: red;
+    width: 100%;
+    height: 15vh;
+}
+
+.main {
+    background-color: blue;
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.header .logo {
+    width: 20%;
+    height: 15vh;
+    background-color: black;
+    background-image: url(./image/logo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.header .menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80%;
+    height: 15vh;
+    background-color: #d5d1cf;
+}
+
+.header .menu ul {
+display: flex;
+justify-content: center;
+margin-right: 20px;
+}
+
+.header .menu ul li a{
+    display: inline-block;
+    padding: 15px;
+}
+.header .menu ul li a:hover {
+    background-color: aqua;
+    padding: 15px;
+
+}
+.main .one {
+    width: 100%;
+    height: 70%;
+    background-color: brown;
+    display: grid;
+    grid-template-columns: auto auto auto;
+   
+    gap: 10px;
+}
+
+.main .one .item {
+  
+}
+
+
+.main .two {
+    width: 100%;
+    height: 30%;
+    background-color: chartreuse;
+}
+
+.footer {
+    display: flex;
+    padding: 10px;
+}
+
+.footer .one {
+    background-color: blueviolet;
+    width: 100%;
+    height: 10vh;
+}
+
+.footer .two {
+    background-color: coral;
+    width: 100%;
+    height: 10vh;
+}
+
+.main .one .item {
+    background-color: orange;
+}
+
+.main .one .item-3 {
+    background-color: black;
+    /*
+    grid-row: 1 / span 2;
+    grid-column: 3 / 4;*/
+    /*grid-row-start /  grid-column-start / grid-row-end / grid-column-end  */
+    grid-area: 1/ 3 / span 2 / 3;
+}
+
+.main .two {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.main .two .item {
+    background-color: rgb(70, 49, 12);
+}
