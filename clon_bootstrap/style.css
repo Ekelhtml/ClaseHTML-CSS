@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --colorNavbar :#ccffc4;
+    --colorFooter :#75bc74;
+    --bg-color-cart  : #ce2323;
+    --bg-color-nav-fixed :rgba(150,83,83,0.05);
+    --color-redes-sociales: #ffffff;
+}
+
+.color-navbar {
+    background-color: var(--colorNavbar);
+}
+
+.bg-cart {
+    color: #ce2323;
+}
+
+.bg-nav-fixed {
+    background-color: var(--bg-color-nav-fixed);
+    border-radius: 0 5px 5px 0;
+}
+.redes-sociales{
+    top: 25%;
+    margin-left: 1%;
+    z-index: 99999;
+}
+.redes-sociales ul li a svg {
+    color: var(--color-redes-sociales);
+}
+
+.carousel-item{
+    height: 90vh;
+
+}
+
+.carousel-item img {
+    height: 90vh;
+    
+    background-size: cover;
+}
+
+/*Al codearlo si no necesita !important -- como se observa en codigo comentado: .carousel-indicators button*/
+.carousel-indicators [data-bs-target]{
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    background-color: palevioletred;
+}
+/* .carousel-indicators button{
+    border-radius: 100%;
+    width: 15px !important;  
+    height: 15px !important;
+} */
+
+.card img {
+    height: 45vh;
+}
