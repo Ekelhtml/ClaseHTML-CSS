@@ -60,3 +60,19 @@
 .card img {
     height: 45vh;
 }
+
+.card:hover a.btn {
+    display: inline-block !important;
+    position: absolute;
+    width: 100%;
+    top: 45%;
+
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover img {
+    filter: grayscale(1);
+}
