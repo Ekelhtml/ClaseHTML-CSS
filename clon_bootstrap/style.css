@@ -76,3 +76,7 @@
 .card:hover img {
     filter: grayscale(1);
 }
+
+.borde-button {
+    border: none;
+}
