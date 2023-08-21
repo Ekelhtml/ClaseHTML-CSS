@@ -33,14 +33,12 @@
     color: var(--color-redes-sociales);
 }
 
-.carousel-item{
+.slideCard .carousel-item{
     height: 90vh;
-
 }
 
-.carousel-item img {
-    height: 90vh;
-    
+.slideCard .carousel-item img {
+    height: 100vh;
     background-size: cover;
 }
 
@@ -79,4 +77,29 @@
 
 .borde-button {
     border: none;
+}
+
+.sliceModal .carousel-item{
+    height: 60vh;
+
+}
+
+.slideModal .carousel-item img {
+    height: 50vh;
+    background-size: cover;
+} 
+
+.modalIndicators {
+position: relative;
+margin: 0;
+align-content: start;
+justify-content: left;
+height: 60px;
+
+}
+
+div .modalIndicators img {
+    height: 60px 
+    ;
+    width: 20px !important ;
 }
