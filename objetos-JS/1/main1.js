@@ -1,5 +1,6 @@
 
 let dataPersona = [];
+var indexPersonaUpdate = 0;
 
 // la variable 'condicion' (booleano) si es verdadero al final y si es falso al principio
 const addDataPersona = (dni, firstName, lastName, birthday, address, status, condicion = true) => {
@@ -45,6 +46,7 @@ const addFormPerson = () => {
         //PODEMOS RESETAR DESPUES EL FORM
         document.getElementById("formPerson").reset();
         dni.focus(); //cursor
+        addStorageItems();
         document.getElementById("listPerson").innerHTML = listPerson(dataPersona);
         messageAlert("Datos guardados");
 
@@ -67,17 +69,18 @@ const listPerson = (dataArray) => {
                         <td>${person.birthday}</td>
                         <td>${person.address}</td>
                         <td>${person.status}</td>
-                       
-                        <td><button onclick="deleteRegisterPerson(${person.dni})" type="button"class="btn btn-danger">Eliminar</button></td>
+                        <td>
+                        <button onclick="editarRegisterPerson(${person.dni})" type="button"class="m-1 btn btn-success">Editar</button>
+                        <button onclick="deleteRegisterPerson(${person.dni})" type="button"class="m-1 btn btn-danger">Eliminar</button></td>
                     </tr>`;
-                    //arriba agrego evento onclick
+            //arriba agrego evento onclick
         });
     }
     else {
-        list =`<tr>
-                <td class="text-center"colspan="6">No se encontraron filtrados</td>
+        list = `<tr>
+                <td class="text-center" colspan="6">No se encontraron filtrados</td>
             </tr>`;
-           
+
     }
     return list;
 }
@@ -95,6 +98,9 @@ const searchInput = () => {
     let filterData = filterDataPersona(search);
     document.getElementById("listPerson").innerHTML = listPerson(filterData);
     console.log(search);
+    search.reset();
+
+
 }
 // funcion para el filtrado
 const filterDataPersona = (search) => {
@@ -105,11 +111,79 @@ const filterDataPersona = (search) => {
 
 const deleteRegisterPerson = (dni) => {
     let position = findDniOne(dni);// agreago esta linea verifico en dni par saber el index del vector original y despues elimino
-    dataPersona.splice(position,1); 
+    dataPersona.splice(position, 1);
     document.getElementById("listPerson").innerHTML = listPerson(dataPersona);
+    showHiddeTextButton(0);
+    addStorageItems();
+
 
 }
 
+// funcion editar
+const editarRegisterPerson = (dni) => {
+    let position = findDniOne(dni);
+    let person = dataPersona[position];
+
+    document.getElementById("dni").value = person.dni;
+    document.getElementById("firstName").value = person.firstName;
+    document.getElementById("lastName").value = person.lastName;
+    document.getElementById("birthday").value = person.birthday;
+    document.getElementById("address").value = person.address;
+    document.getElementById("status").value = person.status;
+    //desde html
+    document.getElementById("position").value = position;
+    //creo una variable en cero global arriba del todo y le asigno la posicion
+    indexPersonaUpdate = position;
+    showHiddeTextButton(1);
+}
+
+//funcion editar formulario
+const editFormPerson = () => {
+    let dni = document.getElementById("dni");
+    let firstName = document.getElementById("firstName");
+    let lastName = document.getElementById("lastName");
+    let birthday = document.getElementById("birthday");
+    let address = document.getElementById("address");
+    let status = document.getElementById("status");
+    let position = document.getElementById("position").value;
+    //necesito la posicion del elemento sino no se que elemento cambiar
+
+    //debe existir y ser igual a la position del elemento
+    if (findDniOne(dni.value) == -1 || findDniOne(dni.value) == position) {
+
+        dataPersona[position].dni = dni.value;
+        dataPersona[position].firstName = firstName.value;
+        dataPersona[position].lastName = lastName.value;
+        dataPersona[position].birthday = birthday.value;
+        dataPersona[position].address = address.value;
+        dataPersona[position].status = status.value;
+        showHiddeTextButton(2);
+        dni.focus(); //cursor
+        document.getElementById("listPerson").innerHTML = listPerson(dataPersona);
+        messageAlert("Datos guardados");
+        addStorageItems();
+    }
+    else {
+        dni.focus(); //cursor
+        messageAlert(" Error DNI ya esta registrado", "error");
+    }
+}
+
+const showHiddeTextButton = (valor) => {
+    let formulario = document.getElementById("formPerson");
+    if (valor == 1) {
+        formulario.removeAttribute('onsubmit');
+        formulario.setAttribute('onsubmit', 'event.preventDefault(); editFormPerson()')
+        document.getElementById("addButton").textContent = "Editar Datos"; //cambia el boton al click en editar
+    }
+    else {
+        document.getElementById("addButton").textContent = "Agregar Datos"; //cambia el boton al click en agregar
+        formulario.removeAttribute('onsubmit');
+        formulario.setAttribute('onsubmit', 'event.preventDefault(); addFormPerson()')
+
+        formulario.reset();
+    }
+}
 
 //original
 
@@ -134,6 +208,47 @@ const messageAlert = (title, icon = 'success') => {
     })
 }
 
+//crear variable y almacena los elementos del vector (strings)
+const addStorageItems = () => {
+    localStorage.setItem('listArray', JSON.stringify(dataPersona));
+    sessionStorage.setItem('listArray', JSON.stringify(dataPersona))
+}
+
+const validateDataArray = () => {
+    if(localStorage.getItem('listArray') == null){
+        return [];
+    }
+    else{
+        let list = localStorage.getItem('listArray');
+        return JSON.parse(list);
+    }
+}
+
+dataPersona = validateDataArray();
+console.log(dataPersona);
+document.getElementById("listPerson").innerHTML = listPerson(dataPersona);
+
+
+
+
+
+
+
+//EXISTEN DOS FORMAS DE GUARDAR //storage --- MEMORIA DE CADA NAVEGADOR
+
+// STORAGE => LOCALSTORAGE
+/**setItem("nombre key", valor);*/
+localStorage.setItem("ejemplo", "Hola...") //setItem agrega el elemento
+/**getItem("nombre key") */
+console.log(localStorage.getItem("ejemplo"));
+/**removeItem("ejemplo") */
+//localStorage.removeItem("ejemplo") //remove
+/**clear() remove todos los items*/
+//localStorage.clear() //clear  
+
+// STORAGE => SESSIONSTORAGE // UTILIZA LAS MISMA PROPIEDADES SOLO CAMBIA SESSIONSTORE 
+sessionStorage.setItem("EJEPMO 2", "HOLA...2")
+sessionStorage.getItem("EJEPMO 2");
 
 
 

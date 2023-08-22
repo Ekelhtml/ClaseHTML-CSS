@@ -15,14 +15,14 @@
     <div class="container my-3">
         <div class="row">
             <div class="col-12 col-md-4">
-                <form id="formPerson" class="m-5" onsubmit="event.preventDefault(); addFormPerson()">
-
+                <form id="formPerson" onsubmit="event.preventDefault(); addFormPerson()">
+                <input id="position" value="-1"  type="hidden">
                     <div class="mb-3">
                         <label for="dni">DNI</label>
                         <input type="number" id="dni" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label for="">Nombre</label>
+                        <label for="firstName">Nombre</label>
                         <input type="text" id="firstName" class="form-control" required>
                     </div>
 
@@ -33,12 +33,12 @@
 
                     <div class="mb-3">
                         <label for="birthday">Edad</label>
-                        <input type="date" id="birthday" class="form-control" required>
+                        <input  type="date" id="birthday" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="address">Direccion</label>
-                        <input type="text" id="address" class="form-control" required>
+                        <input name="address" type="text" id="address" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
@@ -47,18 +47,20 @@
                     </div>
                     <div class="mb-3">
 
-                        <!-- todos los eventos deben empezar con on -->
-                        <button class="btn btn-dark" type="submit" >Agregar</button>
+                        <!-- todos los eventos deben empezar con on --> 
+                        <button class="btn btn-dark" type="submit" id="addButton" >Agregar datos</button>
+                        <button class="btn btn-danger" onclick="showHiddeTextButton(2)" type="button" id="" >Cancelar</button>
                     </div>
+                    
 
 
                 </form>
             </div>
 
             <div class="clas-12 col-md-8">
-                <input type="text" onkeyup="searchInput()" placeholder="Buscar por nombre y apellido" id="search" class="form-control mb-3">
+                <input type="text" onkeyup="searchInput()" placeholder="Buscar por nombre y apellido" id="search" class="form-control mb-3"> 
                 <table class="table table-success table-striped table-bordered table-hover">
-                    <thead class="text-center">
+                    <thead class="">
                         <th>DNI</th>
                         <th>Nombre y Apellido</th>
                         <th>Edad</th>
